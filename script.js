@@ -1,13 +1,26 @@
 let myBalance = 10000;
 let myPin = 1234;
 
+// Helper function to hide all sections
+function hideAllSections() {
+  document.querySelectorAll('.section').forEach(section => {
+    section.style.display = 'none';
+  });
+}
+
+// Helper function to go back to operation selection
+function showOperationSection() {
+  hideAllSections();
+  document.getElementById('operation-section').style.display = 'block';
+}
+
 // Handle PIN submit
 document.getElementById('pin-submit').addEventListener('click', function () {
   const pinInput = document.getElementById('pin').value;
   const pinMessage = document.getElementById('pin-message');
   if (parseInt(pinInput) === myPin) {
     pinMessage.textContent = "Correct PIN!";
-    document.getElementById('operation-section').style.display = "block";
+    showOperationSection();
     document.getElementById('pin-section').style.display = "none";
   } else {
     pinMessage.textContent = "Invalid PIN!";
@@ -16,8 +29,8 @@ document.getElementById('pin-submit').addEventListener('click', function () {
 
 // Handle Withdraw operation
 document.getElementById('withdraw').addEventListener('click', function () {
+  hideAllSections();
   document.getElementById('withdraw-section').style.display = "block";
-  document.getElementById('operation-section').style.display = "none";
 });
 
 document.getElementById('withdraw-submit').addEventListener('click', function () {
@@ -33,15 +46,15 @@ document.getElementById('withdraw-submit').addEventListener('click', function ()
 
 // Handle Check Balance operation
 document.getElementById('check-balance').addEventListener('click', function () {
+  hideAllSections();
   document.getElementById('balance-section').style.display = "block";
   document.getElementById('balance').textContent = myBalance;
-  document.getElementById('operation-section').style.display = "none";
 });
 
 // Handle Fast Cash operation
 document.getElementById('fast-cash').addEventListener('click', function () {
+  hideAllSections();
   document.getElementById('fast-cash-section').style.display = "block";
-  document.getElementById('operation-section').style.display = "none";
 });
 
 document.querySelectorAll('.fast-cash-option').forEach(button => {
@@ -53,5 +66,12 @@ document.querySelectorAll('.fast-cash-option').forEach(button => {
     } else {
       document.getElementById('fast-cash-message').textContent = "Insufficient balance!";
     }
+  });
+});
+
+// Handle Back button functionality
+document.querySelectorAll('.back-button').forEach(button => {
+  button.addEventListener('click', function () {
+    showOperationSection();
   });
 });

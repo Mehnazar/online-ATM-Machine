@@ -20,10 +20,11 @@
 
     <!-- Operation Selection -->
     <div id="operation-section" class="section" style="display: none;">
-      <h3>Select your operation</h3>
+      <h3>Select your transaction</h3>
       <button id="withdraw">Withdraw</button>
       <button id="check-balance">Check Balance</button>
       <button id="fast-cash">Fast Cash</button>
+      <button class="back-button">Back</button>
     </div>
 
     <!-- Withdraw Section -->
@@ -32,6 +33,7 @@
       <input type="number" id="withdraw-amount" placeholder="Amount">
       <button id="withdraw-submit">Submit</button>
       <p id="withdraw-message"></p>
+      <button class="back-button">Back</button>
     </div>
 
     <!-- Fast Cash Section -->
@@ -41,11 +43,13 @@
       <button class="fast-cash-option" data-amount="5000">5000</button>
       <button class="fast-cash-option" data-amount="10000">10000</button>
       <p id="fast-cash-message"></p>
+      <button class="back-button">Back</button>
     </div>
 
     <!-- Balance Display -->
     <div id="balance-section" class="section" style="display: none;">
       <p>Your current balance is: <span id="balance"></span></p>
+      <button class="back-button">Back</button>
     </div>
   </div>
 

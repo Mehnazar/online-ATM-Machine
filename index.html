@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Interface</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="atm-container">
+    <h1>ATM Machine</h1>
+
+    <!-- Pin Section -->
+    <div id="pin-section" class="section">
+      <label for="pin">Enter Pin:</label>
+      <input type="number" id="pin" placeholder="Enter your pin">
+      <button id="pin-submit">Submit</button>
+      <p id="pin-message"></p>
+    </div>
+
+    <!-- Operation Selection -->
+    <div id="operation-section" class="section" style="display: none;">
+      <h3>Select your operation</h3>
+      <button id="withdraw">Withdraw</button>
+      <button id="check-balance">Check Balance</button>
+      <button id="fast-cash">Fast Cash</button>
+    </div>
+
+    <!-- Withdraw Section -->
+    <div id="withdraw-section" class="section" style="display: none;">
+      <label for="withdraw-amount">Enter amount to withdraw:</label>
+      <input type="number" id="withdraw-amount" placeholder="Amount">
+      <button id="withdraw-submit">Submit</button>
+      <p id="withdraw-message"></p>
+    </div>
+
+    <!-- Fast Cash Section -->
+    <div id="fast-cash-section" class="section" style="display: none;">
+      <h3>Select Fast Cash Option</h3>
+      <button class="fast-cash-option" data-amount="1000">1000</button>
+      <button class="fast-cash-option" data-amount="5000">5000</button>
+      <button class="fast-cash-option" data-amount="10000">10000</button>
+      <p id="fast-cash-message"></p>
+    </div>
+
+    <!-- Balance Display -->
+    <div id="balance-section" class="section" style="display: none;">
+      <p>Your current balance is: <span id="balance"></span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
